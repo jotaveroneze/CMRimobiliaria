@@ -1,5 +1,6 @@
 from extensions import db
 import os
+import uuid
 
 from werkzeug.utils import secure_filename
 from flask import render_template, redirect, url_for, jsonify, current_app
@@ -111,111 +112,63 @@ def adicionar_tipo_imobiliaria(id_tipo):
     }
 
 
-def cadastrar_tipo_imobiliaria(nome, foto):
+def cadastrar_tipo_imobiliaria(nome, foto=None):
 
     nome = nome.strip()
 
     if not nome:
-        return {
-            'sucesso': False,
-            'erro': 'O nome é obrigatório.'
-        }, 400
+        return False, 'O nome é obrigatório.'
 
-    if not foto or not foto.filename:
-        return {
-            'sucesso': False,
-            'erro': 'A foto é obrigatória.'
-        }, 400
-
-    # Verifica se já existe
-
-    existente = TipoImobiliaria.query.filter_by(
+    tipo_existente = TipoImobiliaria.query.filter_by(
         nome=nome
     ).first()
 
-
-    if existente:
-
-        return {
-            'sucesso': False,
-            'erro': 'Já existe um tipo de imobiliária com esse nome.'
-        }, 400
+    if tipo_existente:
+        return False, 'Esse tipo já existe.'
 
 
-    nome_foto = None
+    # ==============================
+    # FOTO PADRÃO
+    # ==============================
 
+    nome_arquivo = 'padrao.png'
+
+
+    # ==============================
+    # SE ENVIOU UMA FOTO
+    # ==============================
 
     if foto and foto.filename:
 
-        nome_original = secure_filename(
-            foto.filename
-        )
-
         extensao = os.path.splitext(
-            nome_original
+            foto.filename
         )[1].lower()
 
-
-        extensoes_permitidas = {
-            '.jpg',
-            '.jpeg',
-            '.png',
-            '.webp'
-        }
-
-
-        if extensao not in extensoes_permitidas:
-
-            return {
-                'sucesso': False,
-                'erro': 'Formato de imagem inválido.'
-            }, 400
-
-
-        import uuid
-
-        nome_foto = (
-            f"{uuid.uuid4().hex}{extensao}"
+        nome_arquivo = (
+            f'{uuid.uuid4().hex}{extensao}'
         )
-
-
-        pasta = os.path.join(
-            current_app.static_folder,
-            'imagens',
-            'tipos'
-        )
-
-
-        os.makedirs(
-            pasta,
-            exist_ok=True
-        )
-
 
         caminho = os.path.join(
-            pasta,
-            nome_foto
+            current_app.root_path,
+            'static',
+            'imagens',
+            'tipos',
+            nome_arquivo
         )
-
 
         foto.save(caminho)
 
 
+    # ==============================
+    # CADASTRA
+    # ==============================
+
     novo_tipo = TipoImobiliaria(
         nome=nome,
-        foto=nome_foto
+        foto=nome_arquivo
     )
 
-
     db.session.add(novo_tipo)
-
     db.session.commit()
 
-
-    return {
-        'sucesso': True,
-        'mensagem': 'Tipo cadastrado com sucesso.',
-        'id': novo_tipo.id,
-        'nome': novo_tipo.nome,
-        'foto': novo_tipo.foto
-    }
+    return True, None

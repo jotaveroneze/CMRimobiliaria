@@ -73,7 +73,7 @@ def criar_senha():
                 erro=erro
             )
 
-        return redirect(url_for('login'))
+        return redirect(url_for('login.login'))
 
     return render_template('criar_senha.html')
 

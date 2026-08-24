@@ -1,0 +1,127 @@
+<div
+    id="modalEditarUsuarioSelecionado"
+    class="modal-editar-usuario-selecionado">
+
+    <div class="modal-editar-usuario-selecionado-conteudo">
+
+        <!-- ==============================
+             FECHAR
+        =============================== -->
+
+        <button
+            type="button"
+            id="fecharEditarUsuarioSelecionado"
+            class="fechar-editar-usuario-selecionado">
+
+            ×
+
+        </button>
+
+
+        <!-- ==============================
+             TÍTULO
+        =============================== -->
+
+        <h2>
+            Editar usuário
+        </h2>
+
+
+        <!-- ==============================
+             FORMULÁRIO
+        =============================== -->
+
+        <form id="formEditarUsuarioSelecionado">
+
+            <!-- ID DO USUÁRIO -->
+
+            <input
+                type="hidden"
+                id="editarUsuarioId"
+                name="usuario_id"
+            >
+
+
+            <!-- ==============================
+                 NOME
+            =============================== -->
+
+            <div class="grupo-editar-usuario">
+
+                <label for="editarUsuarioNome">
+                    Nome
+                </label>
+
+                <input
+                    type="text"
+                    id="editarUsuarioNome"
+                    name="nome"
+                    placeholder="Nome do usuário"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ==============================
+                 EMAIL
+            =============================== -->
+
+            <div class="grupo-editar-usuario">
+
+                <label for="editarUsuarioEmail">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="editarUsuarioEmail"
+                    name="email"
+                    placeholder="E-mail do usuário"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ==============================
+                 ERRO
+            =============================== -->
+
+            <div
+                id="erroEditarUsuario"
+                class="erro-editar-usuario">
+            </div>
+
+
+            <!-- ==============================
+                 BOTÕES
+            =============================== -->
+
+            <div class="botoes-editar-usuario">
+
+                <button
+                    type="button"
+                    id="cancelarEditarUsuario"
+                    class="btn-cancelar-editar-usuario">
+
+                    Cancelar
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn-salvar-editar-usuario">
+
+                    Salvar alterações
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

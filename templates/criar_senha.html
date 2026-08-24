@@ -41,6 +41,7 @@
             <form method="POST" action="{{ url_for('cadastro.criar_senha') }}">
 
                 <div class="mb-3">
+
                     <label for="senha" class="form-label">
                         Senha
                     </label>
@@ -53,9 +54,12 @@
                         placeholder="Digite sua senha"
                         required
                     >
+
                 </div>
 
+
                 <div class="mb-3">
+
                     <label for="confirmar_senha" class="form-label">
                         Confirmar senha
                     </label>
@@ -68,10 +72,16 @@
                         placeholder="Digite sua senha novamente"
                         required
                     >
+
                 </div>
 
-                <button type="submit" class="btn btn-primary w-100">
+
+                <button
+                    type="submit"
+                    class="btn btn-primary w-100">
+
                     Criar senha
+
                 </button>
 
             </form>

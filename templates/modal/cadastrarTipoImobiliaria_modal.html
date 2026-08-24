@@ -61,7 +61,6 @@
                     id="fotoTipo"
                     name="foto"
                     accept="image/png,image/jpeg,image/webp"
-                    required
                 >
 
                 <span
@@ -104,14 +103,14 @@
             <div
                 id="previewFoto"
                 class="preview-foto"
-                style="display: none;">
+                style="display: block;">
 
                 <p>Foto selecionada:</p>
 
                 <img
                     id="previewImagem"
                     class="categoria-foto"
-                    src=""
+                    src="{{ url_for('static', filename='imagens/tipos/padrao.png') }}"
                     alt="Preview da foto">
 
             </div>

@@ -1,3 +1,4 @@
+from flask import current_app
 from flask_mail import Message
 
 
@@ -5,7 +6,7 @@ def enviar_codigo_email(mail, nome, email, codigo):
 
     mensagem = Message(
         subject='Código de verificação - Imobiliária',
-        sender=mail.app.config['MAIL_USERNAME'],
+        sender=current_app.config['MAIL_USERNAME'],
         recipients=[email]
     )
 

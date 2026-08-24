@@ -102,12 +102,17 @@ def cadastrar_tipo_route():
         }, 403
 
 
-    nome = request.form.get('nome')
+    nome = request.form.get(
+        'nome',
+        ''
+    ).strip()
 
-    foto = request.files.get('foto')
+    foto = request.files.get(
+        'foto'
+    )
 
 
-    if not nome or not nome.strip():
+    if not nome:
 
         return {
             'sucesso': False,
@@ -115,7 +120,21 @@ def cadastrar_tipo_route():
         }, 400
 
 
-    return cadastrar_tipo_imobiliaria(
+    sucesso, erro = cadastrar_tipo_imobiliaria(
         nome,
         foto
     )
+
+
+    if not sucesso:
+
+        return {
+            'sucesso': False,
+            'erro': erro
+        }, 400
+
+
+    return {
+        'sucesso': True,
+        'mensagem': 'Tipo de imobiliária cadastrado com sucesso.'
+    }, 200

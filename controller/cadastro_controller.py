@@ -86,7 +86,6 @@ SENHA_PADRAO = 'Imobiliaria@2026'
 
 def cadastrar_usuario_ceo(nome, email):
 
-    # Verifica se o e-mail já existe
     usuario_existente = Usuario.query.filter_by(
         email=email
     ).first()
@@ -94,13 +93,14 @@ def cadastrar_usuario_ceo(nome, email):
     if usuario_existente:
         return False, 'Usuário já cadastrado.'
 
-    # Cria o hash da senha padrão
-    senha_hash = generate_password_hash(SENHA_PADRAO)
+    senha_hash = generate_password_hash(
+        SENHA_PADRAO
+    )
 
     usuario = Usuario(
         nome=nome,
         email=email,
-        senha=generate_password_hash(SENHA_PADRAO),
+        senha=senha_hash,
         tipo_usuario=0
     )
 

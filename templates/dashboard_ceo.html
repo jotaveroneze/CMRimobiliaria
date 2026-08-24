@@ -59,14 +59,54 @@
                     Adicionar usuário
                 </a>
 
-                <a href="#">
+                <a href="#" id="btnPermissoesUsuario">
                     Permissões
                 </a>
 
-                <a href="#">
-                    Editar usuários
-                </a>
+                <div class="item-editar-usuarios">
 
+                    <a href="#" id="btnEditarUsuario">
+                        Editar usuários
+                        <span class="seta-editar-usuarios">›</span>
+                    </a>
+
+                    <div
+                        id="submenuEditarUsuarios"
+                        class="submenu-editar-usuarios">
+
+                        <button
+                            type="button"
+                            class="btn-tipo-editar-usuario"
+                            data-permissao="1"
+                            data-titulo="Gerentes">
+
+                            Gerentes
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn-tipo-editar-usuario"
+                            data-permissao="0"
+                            data-titulo="Usuários">
+
+                            Usuários
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn-tipo-editar-usuario"
+                            data-permissao="2"
+                            data-titulo="Vendedores">
+
+                            Vendedores
+
+                        </button>
+
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -88,7 +128,18 @@
 
                 <div class="categoria-card">
 
-                    <!-- FOTO DA CATEGORIA -->
+                    <button
+                        type="button"
+                        class="btn-config-categoria"
+                        data-id="{{ categoria.tipo_imobiliaria.id }}"
+                        data-nome="{{ categoria.tipo_imobiliaria.nome }}"
+                        data-foto="{{ url_for(
+                            'static',
+                            filename='imagens/tipos/' + categoria.tipo_imobiliaria.foto
+                        ) }}"
+                        title="Configurar categoria">
+                        ⚙
+                    </button>
 
                     <img
                         src="{{ url_for(
@@ -99,29 +150,26 @@
                         class="categoria-foto"
                     >
 
-
-                    <!-- NOME DA CATEGORIA -->
-
                     <span class="categoria-nome">
-
                         {{ categoria.tipo_imobiliaria.nome }}
-
                     </span>
+
+                    <button
+                        type="button"
+                        class="btn-acessar-categoria"
+                        data-id="{{ categoria.tipo_imobiliaria.id }}">
+                        Acessar
+                    </button>
 
                 </div>
 
             {% endfor %}
 
-
-            <!-- BOTÃO + -->
-
             <button
                 type="button"
                 id="btnAdicionarCategoria"
                 class="adicionar-categoria">
-
                 +
-
             </button>
 
         </div>
@@ -153,6 +201,14 @@
     {% include 'modal/suporte_modal.html' %}
 
     {% include 'modal/adicionarUsuarios_modal.html' %}
+
+    {% include 'modal/permissoesUsuario_modal.html' %}
+
+    {% include 'modal/editarCategoria_modal.html' %}
+
+    {% include 'modal/editarUsuario_modal.html' %}
+
+    {% include 'modal/editarUsuarioSelecionado_modal.html' %}
 
     <!-- JAVASCRIPT -->
     <script

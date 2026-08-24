@@ -1,0 +1,101 @@
+<div
+    id="modalEditarCategoria"
+    class="modal-editar-categoria">
+
+    <div class="modal-editar-categoria-conteudo">
+
+        <button
+            type="button"
+            id="fecharEditarCategoria"
+            class="fechar-editar-categoria">
+            ×
+        </button>
+
+        <h2>Editar categoria</h2>
+
+        <form id="formEditarCategoria">
+
+            <input
+                type="hidden"
+                id="editarCategoriaId"
+                name="categoria_id"
+            >
+
+            <div class="grupo-editar-categoria">
+
+                <label for="editarCategoriaNome">
+                    Nome
+                </label>
+
+                <input
+                    type="text"
+                    id="editarCategoriaNome"
+                    name="nome"
+                    required
+                >
+
+            </div>
+
+            <div class="grupo-editar-categoria">
+
+                <label for="editarCategoriaFoto">
+                    Foto
+                </label>
+
+                <input
+                    type="file"
+                    id="editarCategoriaFoto"
+                    name="foto"
+                    accept="image/*"
+                >
+
+            </div>
+
+            <div class="preview-editar-categoria">
+
+                <img
+                    id="previewEditarCategoria"
+                    src=""
+                    alt="Prévia da categoria"
+                >
+
+            </div>
+
+            <div
+                id="erroEditarCategoria"
+                class="erro-editar-categoria">
+            </div>
+
+            <div class="rodape-editar-categoria">
+
+                <button
+                    type="button"
+                    id="btnDeletarCategoria"
+                    class="btn-deletar-categoria">
+                    Deletar categoria
+                </button>
+
+                <div class="botoes-editar-categoria">
+
+                    <button
+                        type="button"
+                        id="cancelarEditarCategoria"
+                        class="btn-cancelar-edicao">
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn-salvar-edicao">
+                        Salvar alterações
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

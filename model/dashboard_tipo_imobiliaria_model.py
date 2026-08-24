@@ -1,6 +1,5 @@
 from extensions import db
 
-
 class DashboardTipoImobiliaria(db.Model):
 
     __tablename__ = 'dashboard_tipo_imobiliaria'

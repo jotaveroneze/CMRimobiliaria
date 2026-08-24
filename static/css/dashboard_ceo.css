@@ -95,28 +95,25 @@ body {
 ========================== */
 
 .categoria-card {
-    width: 220px;
-    height: 220px;
+    position: relative;
+
+    width: 240px;
+    height: 280px;
 
     border: 2px solid #d9d9d9;
-
     border-radius: 16px;
 
     background: #fff;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
-    gap: 14px;
+    gap: 12px;
 
-    padding: 20px;
-
-    cursor: pointer;
+    padding: 25px 20px 18px;
 
     transition: 0.2s;
 }
@@ -127,21 +124,22 @@ body {
 ========================== */
 
 .imagem-corte {
-    max-width: 100%;
-    max-height: 500px;
     display: block;
+
+    max-width: 100%;
+    max-height: 700px;
+
+    width: 100%;
 }
 
 
 .categoria-foto {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
 
     object-fit: cover;
 
     border-radius: 14px;
-
-    display: block;
 }
 
 
@@ -156,6 +154,66 @@ body {
     text-align: center;
 
     color: #222;
+}
+
+.btn-acessar-categoria {
+    width: 150px;
+    height: 36px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #222;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+.btn-acessar-categoria:hover {
+    background: #444;
+}
+
+
+/* ENGRENAGEM */
+
+.btn-config-categoria {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-config-categoria:hover {
+    background: #f1f1f1;
+
+    color: #222;
+
+    transform: rotate(25deg);
 }
 
 
@@ -216,15 +274,16 @@ body {
 ========================== */
 
 .crop-container {
-    width: 700px;
-    height: 700px;
+    width: 100%;
 
-    max-width: 100%;
-    max-height: 700px;
+    max-width: 700px;
+    height: 600px;
 
-    margin-top: 15px;
+    margin: 20px auto 0;
 
     overflow: hidden;
+
+    border-radius: 10px;
 }
 
 
@@ -269,16 +328,17 @@ body {
 ========================== */
 
 .categoria-foto {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 120px;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    border-radius: 14px;
+    border-radius: 10px;
 
     display: block;
-}
 
+    background: transparent;
+}
 
 /* ==========================
    FOOTER
@@ -807,4 +867,1139 @@ body {
         padding: 25px 20px;
     }
 
+}
+
+/* =========================================================
+   MODAL DE PERMISSÕES
+========================================================= */
+
+.modal-permissoes {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.50);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 99999;
+}
+
+
+.modal-permissoes.ativo {
+    display: flex;
+}
+
+
+/* =========================================================
+   CONTEÚDO DO MODAL
+========================================================= */
+
+.modal-permissoes-conteudo {
+    position: relative;
+
+    width: 520px;
+    max-width: calc(100% - 40px);
+
+    max-height: 80vh;
+
+    padding: 28px 30px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    overflow-y: auto;
+
+    font-family: Arial, sans-serif;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.modal-permissoes-conteudo h2 {
+    margin: 0 0 18px 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+
+.fechar-modal-permissoes {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    color: #777;
+
+    cursor: pointer;
+}
+
+
+.fechar-modal-permissoes:hover {
+    background: #f2f2f2;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+.pesquisa-permissoes {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+#pesquisaPermissoes {
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d7d7d7;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+}
+
+
+#pesquisaPermissoes:focus {
+    border-color: #999;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.lista-permissoes {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   CARD DO USUÁRIO
+========================================================= */
+
+.usuario-permissao {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 10px;
+
+    background: #fff;
+}
+
+
+/* =========================================================
+   TOPO
+========================================================= */
+
+.usuario-permissao-topo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   NOME E EMAIL
+========================================================= */
+
+.usuario-permissao-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.usuario-permissao-info strong {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+.usuario-permissao-info span {
+    font-size: 13px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   PERMISSÃO ATUAL
+========================================================= */
+
+.permissao-atual {
+    margin-top: 7px;
+
+    font-size: 14px;
+
+    color: #666;
+}
+
+
+.permissao-atual strong {
+    color: #222;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SETA
+========================================================= */
+
+.btn-expandir-permissao {
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border: none;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 24px;
+
+    color: #555;
+}
+
+
+.btn-expandir-permissao span {
+    display: block;
+
+    transition: transform 0.2s ease;
+}
+
+
+.btn-expandir-permissao:hover {
+    background: #f4f4f4;
+
+    border-radius: 50%;
+}
+
+
+.btn-expandir-permissao.aberto span {
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   OPÇÕES DE PERMISSÃO
+========================================================= */
+
+/* ESCONDIDO POR PADRÃO */
+
+.usuario-permissao-opcoes {
+    display: none;
+
+    margin-top: 12px;
+
+    gap: 10px;
+}
+
+
+/* MOSTRA SOMENTE QUANDO CLICA NA SETA */
+
+.usuario-permissao-opcoes.ativo {
+    display: flex;
+}
+
+
+/* =========================================================
+   BOTÕES DE PERMISSÃO
+========================================================= */
+
+.btn-opcao-permissao {
+    min-width: 80px;
+
+    height: 34px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #444;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-opcao-permissao:hover {
+    background: #f3f3f3;
+
+    border-color: #aaa;
+
+    color: #111;
+}
+
+
+.btn-opcao-permissao:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   MENSAGENS
+========================================================= */
+
+.carregando-permissoes,
+.erro-permissoes,
+.sem-usuarios {
+    text-align: center;
+
+    padding: 20px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   SCROLL
+========================================================= */
+
+.modal-permissoes-conteudo::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.modal-permissoes-conteudo::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.modal-permissoes-conteudo::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .modal-permissoes-conteudo {
+        width: calc(100% - 30px);
+
+        padding: 24px 20px;
+    }
+
+}
+
+/* =========================================================
+   MODAL EDITAR CATEGORIA
+========================================================= */
+
+.modal-editar-categoria {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 99999;
+}
+
+
+.modal-editar-categoria.ativo {
+    display: flex;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.modal-editar-categoria-conteudo {
+    position: relative;
+
+    width: 500px;
+    max-width: 90%;
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   FECHAR
+========================================================= */
+
+.fechar-editar-categoria {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#formEditarCategoria {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+.grupo-editar-categoria {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.grupo-editar-categoria input {
+    height: 42px;
+
+    padding: 8px 12px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 7px;
+}
+
+
+/* =========================================================
+   PREVIEW
+========================================================= */
+
+.preview-editar-categoria {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 5px;
+}
+
+
+#previewEditarCategoria {
+    width: 170px;
+    height: 170px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    border: 1px solid #ddd;
+}
+
+
+.rodape-editar-categoria {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 24px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e5e5;
+}
+
+
+.botoes-editar-categoria {
+    display: flex;
+
+    gap: 10px;
+
+    margin: 0;
+}
+
+
+.btn-deletar-categoria {
+    height: 40px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dc3545;
+    border-radius: 7px;
+
+    background: #fff;
+
+    color: #dc3545;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-deletar-categoria:hover {
+    background: #dc3545;
+
+    color: #fff;
+}
+
+/* ==========================================
+   EDITAR USUÁRIOS
+========================================== */
+
+.item-editar-usuarios {
+    width: 100%;
+}
+
+
+/* BOTÃO EDITAR USUÁRIOS */
+
+#btnEditarUsuario {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* SETA */
+
+.seta-editar-usuarios {
+    margin-left: auto;
+
+    font-size: 18px;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* ==========================================
+   SUBMENU
+========================================== */
+
+.submenu-editar-usuarios {
+    width: 100%;
+
+    display: none;
+
+    flex-direction: column;
+
+    margin-top: 5px;
+
+    padding-left: 12px;
+
+    border-left: 2px solid #e5e5e5;
+}
+
+
+/* SUBMENU ABERTO */
+
+.submenu-editar-usuarios.ativo {
+    display: flex;
+}
+
+
+/* ==========================================
+   OPÇÕES
+========================================== */
+
+.btn-tipo-editar-usuario {
+    width: 100%;
+
+    padding: 9px 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+
+    text-align: left;
+
+    font-size: 14px;
+
+    color: #555;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-tipo-editar-usuario:hover {
+    background: #f2f2f2;
+
+    color: #222;
+}
+
+/* =========================================================
+   MODAL EDITAR USUÁRIO SELECIONADO
+========================================================= */
+
+.modal-editar-usuario-selecionado {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 99999;
+}
+
+
+.modal-editar-usuario-selecionado.ativo {
+    display: flex;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.modal-editar-usuario-selecionado-conteudo {
+    position: relative;
+
+    width: 500px;
+    max-width: 90%;
+
+    padding: 30px;
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.modal-editar-usuario-selecionado-conteudo h2 {
+    margin: 0 0 25px 0;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   FECHAR
+========================================================= */
+
+.fechar-editar-usuario-selecionado {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 24px;
+
+    color: #555;
+
+    cursor: pointer;
+}
+
+
+.fechar-editar-usuario-selecionado:hover {
+    color: #000;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#formEditarUsuarioSelecionado {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.grupo-editar-usuario {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.grupo-editar-usuario label {
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+.grupo-editar-usuario input {
+    width: 100%;
+
+    height: 44px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+.grupo-editar-usuario input:focus {
+    border-color: #777;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   ERRO
+========================================================= */
+
+.erro-editar-usuario {
+    color: #d32f2f;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.botoes-editar-usuario {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 8px;
+}
+
+
+.btn-cancelar-editar-usuario,
+.btn-salvar-editar-usuario {
+    height: 40px;
+
+    padding: 0 16px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+.btn-cancelar-editar-usuario {
+    background: #fff;
+
+    border: 1px solid #d5d5d5;
+
+    color: #444;
+}
+
+
+.btn-salvar-editar-usuario {
+    background: #222;
+
+    border: 1px solid #222;
+
+    color: #fff;
+}
+
+
+.btn-salvar-editar-usuario:hover {
+    background: #444;
+}
+
+/* =========================================================
+   MODAL - LISTA EDITAR USUÁRIOS
+========================================================= */
+
+.modal-editar-usuarios {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.50);
+
+    z-index: 99999;
+}
+
+
+/* MODAL ABERTO */
+
+.modal-editar-usuarios.ativo {
+    display: flex;
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.modal-editar-usuarios-conteudo {
+    position: relative;
+
+    width: 520px;
+    max-width: calc(100% - 40px);
+
+    max-height: 80vh;
+
+    padding: 28px 30px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.modal-editar-usuarios-conteudo h2 {
+    margin: 0 0 20px 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   FECHAR
+========================================================= */
+
+.fechar-lista-editar-usuario {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+.fechar-lista-editar-usuario:hover {
+    background: #f2f2f2;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+.pesquisa-editar-usuario {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+#pesquisaEditarUsuario {
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d7d7d7;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+#pesquisaEditarUsuario:focus {
+    border-color: #999;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.lista-editar-usuarios {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   USUÁRIO
+========================================================= */
+
+.item-editar-usuario {
+    width: 100%;
+
+    min-height: 65px;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid #e1e1e1;
+
+    border-radius: 9px;
+
+    background: #fff;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.item-editar-usuario:hover {
+    background: #f7f7f7;
+
+    border-color: #bbb;
+}
+
+
+/* =========================================================
+   NOME + EMAIL
+========================================================= */
+
+.item-editar-usuario-info {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 4px;
+}
+
+
+.item-editar-usuario-info strong {
+    font-size: 15px;
+
+    color: #222;
+}
+
+
+.item-editar-usuario-info span {
+    font-size: 13px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   SETA
+========================================================= */
+
+.seta-usuario-edicao {
+    font-size: 23px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   MENSAGENS
+========================================================= */
+
+.carregando-editar-usuario,
+.sem-usuarios-edicao,
+.erro-lista-usuario {
+    padding: 20px;
+
+    text-align: center;
+
+    color: #777;
 }
