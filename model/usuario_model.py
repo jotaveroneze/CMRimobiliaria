@@ -39,22 +39,6 @@ class Usuario(db.Model, UserMixin):
         nullable=True
     )
 
-    quantidade_vendas = db.Column(
-        db.Integer,
-        nullable=False,
-        default=0
-    )
-
-    nota = db.Column(
-        db.Integer,
-        nullable=True
-    )
-
-    tempo_area = db.Column(
-        db.Integer,
-        nullable=True
-    )
-
     whatsapp = db.Column(
         db.String(20),
         nullable=True

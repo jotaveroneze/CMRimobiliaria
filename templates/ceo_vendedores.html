@@ -1,10 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Vendedores - {{ categoria.nome }}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/ceo_vendedores.css') }}"
+    >
+
 </head>
+
+
 <body>
 
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header class="header">
+
+        <div class="header-logo">
+
+            <a
+                href="{{ url_for('dashboard.dashboard_ceo_route') }}">
+
+                CRM Imobiliária
+
+            </a>
+
+        </div>
+
+
+        <nav class="header-nav">
+
+            <a
+                href="{{ url_for('dashboard.dashboard_ceo_route') }}">
+
+                Voltar
+
+            </a>
+
+            <a href="/">
+                Sair
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         CONTEÚDO
+    =========================================== -->
+
+    <main class="dashboard-vendedores">
+
+
+        <!-- ======================================
+             CABEÇALHO DA CATEGORIA
+        ======================================= -->
+
+        <div class="cabecalho-categoria">
+
+            <div>
+
+                <span class="subtitulo">
+                    Vendedores de
+                </span>
+
+                <h1>
+                    {{ categoria.nome }}
+                </h1>
+
+            </div>
+
+
+            <img
+                src="{{ url_for(
+                    'static',
+                    filename='imagens/tipos/' + categoria.foto
+                ) }}"
+                alt="{{ categoria.nome }}"
+                class="categoria-foto"
+            >
+
+        </div>
+
+
+
+        <!-- ======================================
+             GRID DOS VENDEDORES
+        ======================================= -->
+
+        <div class="vendedores-grid">
+
+
+            {% for vendedor, dados in vendedores %}
+
+
+                <div class="vendedor-card">
+
+                    <!-- FOTO -->
+
+                    {% if vendedor.foto %}
+
+                        <img
+                            src="{{ url_for(
+                                'static',
+                                filename='imagens/usuarios/' + vendedor.foto
+                            ) }}"
+                            alt="{{ vendedor.nome }}"
+                            class="vendedor-foto"
+                        >
+
+                    {% else %}
+
+                        <div class="vendedor-sem-foto">
+
+                            {{ vendedor.nome[0]|upper }}
+
+                        </div>
+
+                    {% endif %}
+
+
+                    <!-- NOME -->
+
+                    <strong class="vendedor-nome">
+
+                        {{ vendedor.nome }}
+
+                    </strong>
+
+
+                    <!-- EMAIL -->
+
+                    <div
+                        class="avaliacao-vendedor"
+                        data-estrelas="{{ dados.estrelas }}">
+
+                        <div class="estrelas-card"></div>
+
+                    </div>
+
+
+                    <!-- ID -->
+
+                    <button
+                        type="button"
+                        class="btn-acessar-vendedor"
+                        data-id="{{ vendedor.id }}">
+
+                        Acessar
+
+                    </button>
+
+                </div>
+
+
+            {% endfor %}
+
+
+
+            <!-- ==================================
+                 BOTÃO +
+            =================================== -->
+
+            <button
+                type="button"
+                id="btnAdicionarVendedor"
+                class="adicionar-vendedor">
+
+                +
+
+            </button>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         MODAL ADICIONAR VENDEDOR
+    =========================================== -->
+
+    <div
+        id="modalAdicionarVendedor"
+        class="modal-adicionar-vendedor">
+
+        <div class="modal-adicionar-vendedor-conteudo">
+
+
+            <!-- FECHAR -->
+
+            <button
+                type="button"
+                id="fecharModalAdicionarVendedor"
+                class="fechar-modal-vendedor">
+
+                ×
+
+            </button>
+
+
+            <!-- TÍTULO -->
+
+            <h2>
+                Adicionar vendedor
+            </h2>
+
+
+            <p class="modal-descricao">
+
+                Selecione um vendedor para adicionar em
+
+                <strong>
+                    {{ categoria.nome }}
+                </strong>.
+
+            </p>
+
+
+            <!-- ID DA CATEGORIA -->
+
+            <input
+                type="hidden"
+                id="tipoImobiliariaId"
+                value="{{ categoria.id }}"
+            >
+
+
+            <!-- PESQUISA -->
+
+            <div class="pesquisa-vendedor">
+
+                <input
+                    type="text"
+                    id="pesquisaVendedor"
+                    placeholder="Pesquisar vendedor..."
+                >
+
+            </div>
+
+
+            <!-- LISTA -->
+
+            <div
+                id="listaVendedoresDisponiveis"
+                class="lista-vendedores-disponiveis">
+
+                <p>
+                    Carregando vendedores...
+                </p>
+
+            </div>
+
+
+            <!-- ERRO -->
+
+            <div
+                id="erroAdicionarVendedor"
+                class="erro-adicionar-vendedor">
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    {% include 'modal/adicionarVendedor_modal.html' %}
+
+    <script
+        src="{{ url_for('static', filename='js/ceo_vendedores.js') }}">
+    </script>
+
+
 </body>
+
 </html>

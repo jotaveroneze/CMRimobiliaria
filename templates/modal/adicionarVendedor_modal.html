@@ -1,0 +1,377 @@
+<div
+    id="modalAdicionarVendedor"
+    class="modal-adicionar-vendedor">
+
+    <div class="modal-adicionar-vendedor-conteudo">
+
+        <button
+            type="button"
+            id="fecharModalAdicionarVendedor"
+            class="fechar-modal-vendedor">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Adicionar vendedor
+        </h2>
+
+
+        <p class="modal-descricao">
+
+            Selecione um vendedor para adicionar em
+
+            <strong>
+                {{ categoria.nome }}
+            </strong>.
+
+        </p>
+
+
+        <!-- CATEGORIA ATUAL -->
+
+        <input
+            type="hidden"
+            id="tipoImobiliariaId"
+            value="{{ categoria.id }}"
+        >
+
+
+        <!-- PESQUISA -->
+
+        <div class="pesquisa-vendedor">
+
+            <input
+                type="text"
+                id="pesquisaVendedor"
+                placeholder="Pesquisar vendedor..."
+            >
+
+        </div>
+
+
+        <!-- LISTA -->
+
+        <div
+            id="listaVendedoresDisponiveis"
+            class="lista-vendedores-disponiveis">
+
+            <p class="carregando-vendedores">
+                Os vendedores aparecerão aqui.
+            </p>
+
+        </div>
+
+
+        <!-- ERRO -->
+
+        <div
+            id="erroAdicionarVendedor"
+            class="erro-adicionar-vendedor">
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     MODAL CADASTRAR VENDEDOR NA CATEGORIA
+=========================================== -->
+
+<div
+    id="modalCadastrarVendedorCategoria"
+    class="modal-cadastrar-vendedor">
+
+    <div class="modal-cadastrar-vendedor-conteudo">
+
+
+        <!-- FECHAR -->
+
+        <button
+            type="button"
+            id="fecharCadastrarVendedor"
+            class="fechar-cadastrar-vendedor">
+
+            ×
+
+        </button>
+
+
+        <h2>
+            Adicionar vendedor
+        </h2>
+
+
+        <!-- NOME DO VENDEDOR -->
+
+        <p class="vendedor-selecionado-texto">
+
+            Vendedor:
+
+            <strong
+                id="nomeVendedorSelecionado">
+            </strong>
+
+        </p>
+
+
+        <form
+            id="formCadastrarVendedorCategoria"
+            enctype="multipart/form-data">
+
+
+            <!-- ==================================
+                 IDS
+            =================================== -->
+
+            <input
+                type="hidden"
+                id="vendedorSelecionadoId"
+                name="usuario_id"
+            >
+
+
+            <input
+                type="hidden"
+                id="categoriaSelecionadaId"
+                name="tipo_id"
+                value="{{ categoria.id }}"
+            >
+
+
+            <!-- ==================================
+                 FOTO
+            =================================== -->
+
+            <div class="campo-vendedor">
+
+                <label for="fotoVendedor">
+                    Foto
+                </label>
+
+                <input
+                    type="file"
+                    id="fotoVendedor"
+                    name="foto"
+                    accept="image/png,image/jpeg,image/webp"
+                >
+
+            </div>
+
+
+            <!-- ==================================
+                 PREVIEW FOTO
+            =================================== -->
+
+            <div
+                id="previewFotoVendedorContainer"
+                class="preview-foto-vendedor"
+                style="display: none;">
+
+                <img
+                    id="previewFotoVendedor"
+                    src=""
+                    alt="Foto do vendedor"
+                >
+
+            </div>
+
+
+            <!-- ==================================
+                 ESTRELAS
+            =================================== -->
+
+            <div class="campo-vendedor">
+
+                <label for="estrelasVendedor">
+                    Estrelas
+                </label>
+
+                <select
+                    id="estrelasVendedor"
+                    name="estrelas"
+                    required>
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option value="0">
+                        0 estrelas
+                    </option>
+
+                    <option value="0.5">
+                        0,5 estrela
+                    </option>
+
+                    <option value="1">
+                        1 estrela
+                    </option>
+
+                    <option value="1.5">
+                        1,5 estrelas
+                    </option>
+
+                    <option value="2">
+                        2 estrelas
+                    </option>
+
+                    <option value="2.5">
+                        2,5 estrelas
+                    </option>
+
+                    <option value="3">
+                        3 estrelas
+                    </option>
+
+                    <option value="3.5">
+                        3,5 estrelas
+                    </option>
+
+                    <option value="4">
+                        4 estrelas
+                    </option>
+
+                    <option value="4.5">
+                        4,5 estrelas
+                    </option>
+
+                    <option value="5">
+                        5 estrelas
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ==================================
+                 TEMPO NA ÁREA
+            =================================== -->
+
+            <div class="campo-vendedor">
+
+                <label for="tempoAreaVendedor">
+                    Tempo na área
+                </label>
+
+                <input
+                    type="number"
+                    id="tempoAreaVendedor"
+                    name="tempo_area"
+                    min="0"
+                    placeholder="Ex: 5"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ==================================
+                 QUANTIDADE DE VENDAS
+            =================================== -->
+
+            <div class="campo-vendedor">
+
+                <label for="quantidadeVendasVendedor">
+                    Quantidade de vendas
+                </label>
+
+                <input
+                    type="number"
+                    id="quantidadeVendasVendedor"
+                    name="quantidade_vendas"
+                    min="0"
+                    value="0"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ==================================
+                 TELEFONE
+            =================================== -->
+
+            <div class="campo-vendedor">
+
+                <label for="telefoneVendedor">
+                    Telefone / WhatsApp
+                </label>
+
+                <input
+                    type="text"
+                    id="telefoneVendedor"
+                    name="whatsapp"
+                    maxlength="20"
+                    placeholder="(19) 99999-9999"
+                >
+
+            </div>
+
+
+            <!-- ==================================
+                 DESCRIÇÃO
+            =================================== -->
+
+            <div class="campo-vendedor">
+
+                <label for="descricaoVendedor">
+                    Descrição
+                </label>
+
+                <textarea
+                    id="descricaoVendedor"
+                    name="descricao"
+                    rows="5"
+                    maxlength="2000"
+                    placeholder="Descrição do vendedor..."></textarea>
+
+            </div>
+
+
+            <!-- ==================================
+                 ERRO
+            =================================== -->
+
+            <div
+                id="erroCadastrarVendedor"
+                class="erro-cadastrar-vendedor">
+            </div>
+
+
+            <!-- ==================================
+                 BOTÕES
+            =================================== -->
+
+            <div class="botoes-cadastrar-vendedor">
+
+                <button
+                    type="button"
+                    id="cancelarCadastrarVendedor"
+                    class="btn-cancelar-vendedor">
+
+                    Cancelar
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn-salvar-vendedor">
+
+                    Adicionar vendedor
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>

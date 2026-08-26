@@ -1,0 +1,1140 @@
+/* ==========================
+   CONFIGURAÇÕES GERAIS
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #f5f5f5;
+
+    color: #222;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.header {
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px 0 25px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eaeaea;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+}
+
+
+.header-logo a {
+    text-decoration: none;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+.header-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.header-nav a {
+    text-decoration: none;
+
+    color: #444;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+
+.header-nav a:hover {
+    color: #111;
+}
+
+
+/* ==========================
+   CONTEÚDO PRINCIPAL
+========================== */
+
+.dashboard-vendedores {
+    width: 100%;
+
+    min-height: calc(100vh - 75px);
+
+    padding: 115px 55px 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+}
+
+
+/* ==========================
+   CABEÇALHO DA CATEGORIA
+========================== */
+
+.cabecalho-categoria {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #e3e3e3;
+}
+
+
+.cabecalho-categoria h1 {
+    margin-top: 5px;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+.subtitulo {
+    font-size: 14px;
+
+    color: #777;
+}
+
+
+.categoria-foto {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+
+    background: #fff;
+
+    border: 1px solid #e0e0e0;
+
+    border-radius: 14px;
+
+    padding: 8px;
+}
+
+
+/* ==========================
+   GRID DOS VENDEDORES
+========================== */
+
+.vendedores-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(220px, 220px));
+
+    gap: 25px;
+
+    justify-content: start;
+}
+
+
+/* ==========================
+   CARD DO VENDEDOR
+========================== */
+
+.vendedor-card {
+    position: relative;
+
+    width: 220px;
+    min-height: 270px;
+
+    padding: 22px 18px 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    background: #ffffff;
+
+    border: 2px solid #d9d9d9;
+
+    border-radius: 16px;
+
+    transition: 0.2s;
+}
+
+
+.vendedor-card:hover {
+    border-color: #999;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==========================
+   FOTO DO VENDEDOR
+========================== */
+
+.vendedor-foto {
+    width: 120px;
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 1px solid #e0e0e0;
+}
+
+
+/* ==========================
+   SEM FOTO
+========================== */
+
+.vendedor-sem-foto {
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    border: 1px solid #dddddd;
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    color: #777;
+}
+
+
+/* ==========================
+   NOME
+========================== */
+
+.vendedor-nome {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #222;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================
+   EMAIL
+========================== */
+
+.vendedor-email {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    color: #777;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================
+   BOTÃO ACESSAR
+========================== */
+
+.btn-acessar-vendedor {
+    width: 150px;
+    height: 36px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #222;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-acessar-vendedor:hover {
+    background: #444;
+}
+
+
+/* ==========================
+   BOTÃO +
+========================== */
+
+.adicionar-vendedor {
+    width: 220px;
+    height: 270px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 2px dashed #d9d9d9;
+
+    border-radius: 16px;
+
+    font-size: 45px;
+
+    color: #888;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.adicionar-vendedor:hover {
+    border-color: #999;
+
+    color: #333;
+
+    transform: translateY(-3px);
+}
+
+
+/* ==========================
+   MODAL
+========================== */
+
+.modal-adicionar-vendedor {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 99999;
+}
+
+
+.modal-adicionar-vendedor.ativo {
+    display: flex;
+}
+
+
+/* ==========================
+   CONTEÚDO DO MODAL
+========================== */
+
+.modal-adicionar-vendedor-conteudo {
+    position: relative;
+
+    width: 560px;
+    max-width: 95%;
+
+    max-height: 80vh;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    overflow-y: auto;
+}
+
+
+/* ==========================
+   TÍTULO DO MODAL
+========================== */
+
+.modal-adicionar-vendedor-conteudo h2 {
+    margin: 0 0 8px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+.modal-descricao {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #777;
+}
+
+
+.modal-descricao strong {
+    color: #333;
+}
+
+
+/* ==========================
+   FECHAR MODAL
+========================== */
+
+.fechar-modal-vendedor {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    font-size: 23px;
+
+    color: #777;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.fechar-modal-vendedor:hover {
+    background: #f2f2f2;
+
+    color: #222;
+}
+
+
+/* ==========================
+   PESQUISA
+========================== */
+
+.pesquisa-vendedor {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+
+#pesquisaVendedor {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d7d7d7;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    color: #333;
+}
+
+
+#pesquisaVendedor:focus {
+    border-color: #999;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ==========================
+   LISTA DE VENDEDORES
+========================== */
+
+.lista-vendedores-disponiveis {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* ==========================
+   ITEM DA LISTA
+========================== */
+
+.vendedor-disponivel-item {
+    width: 100%;
+
+    min-height: 65px;
+
+    padding: 12px 14px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    background: #fff;
+
+    border: 1px solid #e1e1e1;
+
+    border-radius: 9px;
+
+    transition: 0.2s;
+}
+
+
+.vendedor-disponivel-item:hover {
+    background: #f8f8f8;
+
+    border-color: #bbb;
+}
+
+
+/* ==========================
+   INFO DO VENDEDOR
+========================== */
+
+.vendedor-disponivel-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.vendedor-disponivel-info strong {
+    font-size: 15px;
+
+    color: #222;
+}
+
+
+.vendedor-disponivel-info span {
+    max-width: 320px;
+
+    font-size: 13px;
+
+    color: #777;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================
+   BOTÃO ADICIONAR
+========================== */
+
+.btn-adicionar-vendedor-lista {
+    min-width: 90px;
+    height: 36px;
+
+    padding: 0 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #222;
+
+    color: #fff;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-adicionar-vendedor-lista:hover {
+    background: #444;
+}
+
+
+/* ==========================
+   ERROS / MENSAGENS
+========================== */
+
+.erro-adicionar-vendedor {
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    text-align: center;
+
+    color: #d32f2f;
+}
+
+
+.sem-vendedores,
+.carregando-vendedores {
+    padding: 20px;
+
+    text-align: center;
+
+    color: #777;
+}
+
+
+/* ==========================
+   SCROLL DO MODAL
+========================== */
+
+.modal-adicionar-vendedor-conteudo::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+.modal-adicionar-vendedor-conteudo::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.modal-adicionar-vendedor-conteudo::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+
+    border-radius: 10px;
+}
+
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media (max-width: 768px) {
+
+    .dashboard-vendedores {
+        padding:
+            100px 25px 40px;
+    }
+
+
+    .cabecalho-categoria {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    .categoria-foto {
+        width: 70px;
+        height: 70px;
+    }
+
+
+    .vendedores-grid {
+        grid-template-columns:
+            repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+
+    .vendedor-card,
+    .adicionar-vendedor {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .header {
+        padding: 0 15px;
+    }
+
+
+    .header-nav {
+        gap: 15px;
+    }
+
+
+    .cabecalho-categoria h1 {
+        font-size: 24px;
+    }
+
+
+    .vendedores-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .modal-adicionar-vendedor-conteudo {
+        padding: 25px 20px;
+    }
+
+
+    .vendedor-disponivel-item {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .btn-adicionar-vendedor-lista {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   MODAL CADASTRAR VENDEDOR
+========================================================= */
+
+.modal-cadastrar-vendedor {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 100000;
+}
+
+
+.modal-cadastrar-vendedor.ativo {
+    display: flex;
+}
+
+
+/* CONTEÚDO */
+
+.modal-cadastrar-vendedor-conteudo {
+    position: relative;
+
+    width: 560px;
+    max-width: 95%;
+
+    max-height: 85vh;
+
+    padding: 30px;
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    overflow-y: auto;
+}
+
+
+.modal-cadastrar-vendedor-conteudo h2 {
+    margin-bottom: 10px;
+
+    font-size: 25px;
+
+    color: #222;
+}
+
+
+/* FECHAR */
+
+.fechar-cadastrar-vendedor {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+
+.fechar-cadastrar-vendedor:hover {
+    background: #f2f2f2;
+
+    color: #222;
+}
+
+
+/* VENDEDOR SELECIONADO */
+
+.vendedor-selecionado-texto {
+    margin-bottom: 22px;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+
+.vendedor-selecionado-texto strong {
+    color: #222;
+}
+
+
+/* FORM */
+
+#formCadastrarVendedorCategoria {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+/* CAMPOS */
+
+.campo-vendedor {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.campo-vendedor label {
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+.campo-vendedor input,
+.campo-vendedor select,
+.campo-vendedor textarea {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    color: #333;
+}
+
+
+.campo-vendedor input,
+.campo-vendedor select {
+    height: 44px;
+}
+
+
+.campo-vendedor textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+
+.campo-vendedor input:focus,
+.campo-vendedor select:focus,
+.campo-vendedor textarea:focus {
+    border-color: #999;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+
+/* FOTO */
+
+.preview-foto-vendedor {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+#previewFotoVendedor {
+    width: 130px;
+    height: 130px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 1px solid #ddd;
+}
+
+
+/* ERRO */
+
+.erro-cadastrar-vendedor {
+    color: #d32f2f;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* BOTÕES */
+
+.botoes-cadastrar-vendedor {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+
+.btn-cancelar-vendedor,
+.btn-salvar-vendedor {
+    height: 40px;
+
+    padding: 0 16px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+.btn-cancelar-vendedor {
+    background: #fff;
+
+    border: 1px solid #d5d5d5;
+
+    color: #444;
+}
+
+
+.btn-salvar-vendedor {
+    background: #222;
+
+    border: 1px solid #222;
+
+    color: #fff;
+}
+
+
+.btn-salvar-vendedor:hover {
+    background: #444;
+}
+
+.estrelas-vendedor {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    margin-top: 5px;
+}
+
+.estrela {
+    position: relative;
+
+    font-size: 18px;
+    line-height: 1;
+}
+
+.estrela.cheia {
+    color: #f5b301;
+}
+
+.estrela.vazia {
+    color: #d8d8d8;
+}
+
+
+/* MEIA ESTRELA */
+
+.estrela.meia {
+    color: #d8d8d8;
+}
+
+.estrela.meia::before {
+    content: "★";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 50%;
+
+    overflow: hidden;
+
+    color: #f5b301;
+}
+
+.avaliacao-vendedor {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.estrelas-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2px;
+}
+
+.estrela {
+    position: relative;
+
+    font-size: 19px;
+    line-height: 1;
+}
+
+.estrela.cheia {
+    color: #f5b301;
+}
+
+.estrela.vazia {
+    color: #d6d6d6;
+}
+
+.estrela.meia {
+    color: #d6d6d6;
+}
+
+.estrela.meia::before {
+    content: "★";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 50%;
+
+    overflow: hidden;
+
+    color: #f5b301;
+}
