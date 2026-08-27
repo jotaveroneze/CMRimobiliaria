@@ -15,6 +15,7 @@ from route.permissoes_route import permissoes_bp
 from route.categoria_route import categoria_bp
 from route.editarUsuario_route import editar_usuario_bp
 from route.ceo_vendedores_route import ceo_vendedores_bp
+from route.esqueci_senha_route import esqueci_senha_bp
 
 load_dotenv()
 app = Flask(__name__)
@@ -82,6 +83,7 @@ app.register_blueprint(permissoes_bp)
 app.register_blueprint(categoria_bp)
 app.register_blueprint(editar_usuario_bp)
 app.register_blueprint(ceo_vendedores_bp)
+app.register_blueprint(esqueci_senha_bp)
 
 
 @app.route('/')

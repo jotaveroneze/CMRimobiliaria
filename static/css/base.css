@@ -207,3 +207,187 @@ body {
     }
 
 }
+
+/* ================================
+   MODAL ESQUECI SENHA
+================================ */
+
+.modal-esqueci-senha {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 99999;
+}
+
+
+.modal-esqueci-senha.ativo {
+    display: flex;
+}
+
+
+.modal-esqueci-senha-conteudo {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e2e2;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+.modal-esqueci-senha-conteudo h2 {
+    margin-bottom: 8px;
+
+    font-size: 22px;
+    font-weight: 500;
+
+    color: #111111;
+}
+
+
+.modal-esqueci-senha-conteudo p {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+    color: #777777;
+}
+
+
+/* ================================
+   FECHAR MODAL
+================================ */
+
+.fechar-modal-esqueci-senha {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 25px;
+
+    color: #666666;
+
+    cursor: pointer;
+}
+
+
+.fechar-modal-esqueci-senha:hover {
+    color: #111111;
+}
+
+
+/* ================================
+   CAMPO EMAIL
+================================ */
+
+.campo-esqueci-senha {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.campo-esqueci-senha label {
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: #333333;
+}
+
+
+.campo-esqueci-senha input {
+    width: 100%;
+    height: 46px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 5px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+.campo-esqueci-senha input:focus {
+    border-color: #0d6efd;
+
+    box-shadow:
+        0 0 0 2px rgba(13, 110, 253, 0.12);
+}
+
+
+/* ================================
+   ERRO
+================================ */
+
+.erro-esqueci-senha {
+    min-height: 18px;
+
+    margin-top: 7px;
+
+    color: #c62828;
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   BOTÃO ENVIAR
+================================ */
+
+.btn-enviar-codigo {
+    width: 100%;
+    height: 46px;
+
+    margin-top: 12px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #0d6efd;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+.btn-enviar-codigo:hover {
+    background: #0b5ed7;
+}
